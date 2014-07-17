@@ -42,4 +42,17 @@ Calc.mean = function(nums){
   }
     return sum/nums.length;
 };
+
+Calc.stdev = function(nums){
+var mean = Calc.mean(nums);
+  var dev=[];
+for(var j=0; j<nums.length; j++){
+  dev[j]=Math.pow((nums[j]-mean),2);
+}
+var aveDev=Calc.mean(dev);
+console.log(dev);
+return Math.sqrt(aveDev);
+};
+
+
 module.exports = Calc;
